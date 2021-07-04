@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Firebase crud basico</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div id="alerta"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<b>Firebase app 2</b>
+</nav>
+
+<section>
+	<h2 class="titulo">Agregar Datos</h2>
+	<form class="col-lg-9 formulario" method="POST">
+		<div>
+		<input type="text" class="form-control form-control-lg" name="name" placeholder="escriba su nombre" id="name"></div>
+		<div class="campo">
+			<input type="text" class="form-control form-control-lg" name="last" placeholder="escriba su apellido" id="last">
+		</div>
+		<div>
+			<input type="number" class="form-control form-control-lg" name="last" placeholder="escriba su cod" id="code">
+		</div>
+		<button type="button" class="btn btn-success" onclick="agregar_documentos()" id="save">Enviar datos</button>
+	</form>
+</section>
+
+<table class="table table-hover container mt-5">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Codigo</th>
+      <th scope="col">Eliminar</th>
+      <th scope="col">Editar</th>
+    </tr>
+  </thead>
+  <tbody id="mostrar"></tbody>
+</table>
+
+
+<!--firestore-->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
