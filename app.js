@@ -1,19 +1,20 @@
-var mostrar = document.getElementById('mostrar');
+
+const mostrar = document.getElementById('mostrar');
 // Initialize Cloud Firestore through Firebase
+// Estos datos puede que esten borrados de mi cuenta de firebase.
 firebase.initializeApp({
   apiKey: "AIzaSyB9aRl8V02N34ILt84kBiasyMc0MD6Xw9A",
   authDomain: "usuarios-8a3f4.firebaseapp.com",
   projectId: "usuarios-8a3f4"
 });
 
-var db = firebase.firestore();
-
+const db = firebase.firestore();
 
 function agregar_documentos(){
-	var name = document.getElementById('name').value;
-	var last = document.getElementById('last').value;
-	var code = document.getElementById('code').value;
-	var alerta = document.getElementById('alerta');
+	const name = document.getElementById('name').value;
+	const last = document.getElementById('last').value;
+	const code = document.getElementById('code').value;
+	const alerta = document.getElementById('alerta');
 	console.log(name);
 	//agregar documentos
 db.collection("users").add({
@@ -57,7 +58,8 @@ function leer_docs(mostrar){
 				    	</tr>`
 	    });
 	});	
-}leer_docs(mostrar);
+}
+leer_docs(mostrar);
 
 //Borrar documento
 function borrar(id){
@@ -74,17 +76,17 @@ function editar(id, name, last, code){
 	document.getElementById('name').value = name;
 	document.getElementById('last').value = last;
 	document.getElementById('code').value = code;
-	var btn_guardar = document.getElementById('save');
+	const btn_guardar = document.getElementById('save');
 	btn_guardar.innerHTML = 'Editar dato';
 
 	btn_guardar.onclick = () => {
-		var washingtonRef = db.collection("users").doc(id);
+		let washingtonRef = db.collection("users").doc(id);
 
 		// Set the "capital" field of the city 'DC'
 
-		var name = document.getElementById('name').value;
-		var last = document.getElementById('last').value;
-		var code = document.getElementById('code').value;
+		const name = document.getElementById('name').value;
+		const last = document.getElementById('last').value;
+		const code = document.getElementById('code').value;
 
 		return washingtonRef.update({
 		    first: name,
